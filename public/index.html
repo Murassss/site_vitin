@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceito Veículos | Vitrine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="/">Conceito Veículos</a>
+        </div>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">Seu próximo veículo está aqui</p>
+            <h1>Escolha com confiança.</h1>
+            <p>Confira veículos revisados e disponíveis para negociação.</p>
+        </section>
+        <section class="filters" aria-labelledby="filtros-titulo">
+            <h2 id="filtros-titulo">Encontre seu veículo</h2>
+            <div class="filter-grid">
+                <label>Buscar<input id="search" type="search" placeholder="Marca ou modelo"></label>
+                <label>Tipo<select id="type-filter"><option value="">Todos</option><option>Carro</option><option>Moto</option></select></label>
+                <label>Preço máximo<input id="price-filter" type="number" min="0" placeholder="Sem limite"></label>
+                <button id="search-button" type="button">Buscar veículos</button>
+            </div>
+        </section>
+        <p id="result-message" class="result-message" aria-live="polite"></p>
+        <section id="vehicle-list" class="vehicle-grid" aria-label="Veículos disponíveis"></section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

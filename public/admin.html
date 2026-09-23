@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel | Conceito Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container admin-page">
+        <a href="/">← Voltar para a vitrine</a>
+        <section id="login-panel" class="panel">
+            <h1>Acesso administrativo</h1>
+            <form id="login-form">
+                <label>Senha<input id="password" type="password" required></label>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="login-message" class="message" aria-live="polite"></p>
+        </section>
+        <section id="admin-panel" class="panel hidden">
+            <div class="panel-header"><h1>Painel de veículos</h1><button id="logout" class="secondary">Sair</button></div>
+            <form id="vehicle-form" class="admin-form" enctype="multipart/form-data">
+                <label>Tipo<select name="type" required><option value="">Selecione</option><option>Carro</option><option>Moto</option></select></label>
+                <label>Marca<input name="brand" required></label>
+                <label>Modelo<input name="model" required></label>
+                <label>Ano<input name="year" type="number" min="1900" max="2100" required></label>
+                <label>Preço<input name="price" type="number" min="0" step="0.01" required></label>
+                <label>Quilometragem<input name="mileage" type="number" min="0" required></label>
+                <label>Combustível<input name="fuel" required></label>
+                <label>Câmbio<input name="transmission" required></label>
+                <label>Cor<input name="color" required></label>
+                <label class="full">Fotos<input name="images" type="file" accept="image/*" multiple></label>
+                <label class="full">Descrição<textarea name="description" rows="4"></textarea></label>
+                <label class="check full"><input name="available" type="checkbox" checked> Disponível na vitrine</label>
+                <button class="full" type="submit">Cadastrar veículo</button>
+            </form>
+            <p id="admin-message" class="message" aria-live="polite"></p>
+            <div id="admin-vehicles" class="vehicle-grid"></div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
